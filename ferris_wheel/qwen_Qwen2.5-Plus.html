@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Riesenrad Animation</title>
+        <style>
+            /* Allgemeine Stile */
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+            }
+
+            /* Riesenrad-Stil */
+            .ferris-wheel {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                border: 10px solid blue;
+                border-radius: 50%;
+                animation: rotate 10s linear infinite;
+            }
+
+            /* Gondel-Stil */
+            .gondel {
+                position: absolute;
+                width: 30px;
+                height: 60px;
+                background-color: red;
+                border: 2px solid black;
+                border-radius: 5px;
+                transform-origin: bottom center;
+                animation: swing 10s linear infinite;
+            }
+
+            /* Positionierung der Gondeln */
+            .gondel1 {
+                top: -30px;
+                left: 135px;
+                transform: rotate(-90deg);
+            }
+            .gondel2 {
+                top: 65px;
+                left: 200px;
+                transform: rotate(-45deg);
+            }
+            .gondel3 {
+                top: 165px;
+                left: 135px;
+                transform: rotate(0deg);
+            }
+            .gondel4 {
+                top: 265px;
+                left: 65px;
+                transform: rotate(45deg);
+            }
+            .gondel5 {
+                top: 165px;
+                left: -30px;
+                transform: rotate(90deg);
+            }
+            .gondel6 {
+                top: 65px;
+                left: 0px;
+                transform: rotate(135deg);
+            }
+
+            /* Animation für das Drehen des Riesensrads */
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /* Animation für das Schwingen der Gondeln */
+            @keyframes swing {
+                0%,
+                100% {
+                    transform: rotate(-90deg);
+                }
+                25% {
+                    transform: rotate(-85deg);
+                }
+                75% {
+                    transform: rotate(-95deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ferris-wheel">
+            <div class="gondel gondel1"></div>
+            <div class="gondel gondel2"></div>
+            <div class="gondel gondel3"></div>
+            <div class="gondel gondel4"></div>
+            <div class="gondel gondel5"></div>
+            <div class="gondel gondel6"></div>
+        </div>
+    </body>
+</html>

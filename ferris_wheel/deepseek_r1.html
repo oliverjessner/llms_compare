@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Animiertes Riesenrad</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+                margin: 0;
+            }
+
+            .ferris-wheel {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                border: 5px solid blue;
+                border-radius: 50%;
+                animation: rotate 10s linear infinite;
+            }
+
+            .gondola {
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background-color: red;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform-origin: top left;
+            }
+
+            .gondola:nth-child(1) {
+                transform: rotate(0deg) translate(100px) rotate(0deg);
+            }
+            .gondola:nth-child(2) {
+                transform: rotate(45deg) translate(100px) rotate(-45deg);
+            }
+            .gondola:nth-child(3) {
+                transform: rotate(90deg) translate(100px) rotate(-90deg);
+            }
+            .gondola:nth-child(4) {
+                transform: rotate(135deg) translate(100px) rotate(-135deg);
+            }
+            .gondola:nth-child(5) {
+                transform: rotate(180deg) translate(100px) rotate(-180deg);
+            }
+            .gondola:nth-child(6) {
+                transform: rotate(225deg) translate(100px) rotate(-225deg);
+            }
+            .gondola:nth-child(7) {
+                transform: rotate(270deg) translate(100px) rotate(-270deg);
+            }
+            .gondola:nth-child(8) {
+                transform: rotate(315deg) translate(100px) rotate(-315deg);
+            }
+
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ferris-wheel">
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Animiertes Riesenrad</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                background-color: #e0f7fa;
+            }
+
+            .ferris-wheel {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                animation: spin 10s linear infinite;
+            }
+
+            .wheel {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                border: 10px solid blue;
+                transform: translate(-50%, -50%);
+            }
+
+            .gondola {
+                position: absolute;
+                width: 20px;
+                height: 40px;
+                background-color: red;
+                border-radius: 10px;
+                transform-origin: 100px 100px; /* Adjust to match the wheel's center */
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg) translate(-50%, -50%);
+                }
+                to {
+                    transform: rotate(360deg) translate(-50%, -50%);
+                }
+            }
+
+            .gondola:nth-child(1) {
+                transform: rotate(0deg) translate(0, -100px);
+                animation: move-gondola 10s linear infinite;
+            }
+            .gondola:nth-child(2) {
+                transform: rotate(72deg) translate(0, -100px);
+                animation: move-gondola 10s linear infinite 1.25s;
+            }
+            .gondola:nth-child(3) {
+                transform: rotate(144deg) translate(0, -100px);
+                animation: move-gondola 10s linear infinite 2.5s;
+            }
+            .gondola:nth-child(4) {
+                transform: rotate(216deg) translate(0, -100px);
+                animation: move-gondola 10s linear infinite 3.75s;
+            }
+            .gondola:nth-child(5) {
+                transform: rotate(288deg) translate(0, -100px);
+                animation: move-gondola 10s linear infinite 5s;
+            }
+
+            @keyframes move-gondola {
+                0%,
+                100% {
+                    transform: rotate(0deg) translate(0, -100px);
+                }
+                25% {
+                    transform: rotate(90deg) translate(0, -100px);
+                }
+                50% {
+                    transform: rotate(180deg) translate(0, -100px);
+                }
+                75% {
+                    transform: rotate(270deg) translate(0, -100px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ferris-wheel">
+            <div class="wheel"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+            <div class="gondola"></div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Animiertes Riesenrad</title>
+        <style>
+            /* Gesamt-Container für das Riesenrad */
+            .ferris-wheel {
+                position: relative;
+                width: 300px;
+                height: 300px;
+                margin: 50px auto; /* Zentriert das Riesenrad */
+            }
+
+            /* Das eigentliche Rad (umrandeter Kreis), das sich dreht */
+            .wheel {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                border: 8px solid blue; /* Blaue Umrandung für das Rad */
+                border-radius: 50%;
+                box-sizing: border-box;
+                animation: spin 10s linear infinite; /* Endlose Rotation */
+                transform-origin: center center; /* Rotationsachse in der Mitte */
+            }
+
+            /* Jedes „Speichen“-Element wird um einen festen Winkel gedreht */
+            .spoke {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 0;
+                height: 0;
+                transform-origin: center center;
+            }
+
+            /*
+      Jede "Speiche" enthält noch ein .arm-Element, das sich
+      in die entgegengesetzte Richtung dreht, damit die Gondeln
+      aufrecht bleiben.
+    */
+            .arm {
+                position: relative;
+                width: 0;
+                height: 0;
+                animation: spinOpposite 10s linear infinite; /* Dreht sich gegenläufig */
+                transform-origin: center center;
+            }
+
+            /*
+      Die Gondeln selbst (kleine Kreise). Sie werden via
+      translateY() nach oben verschoben, sodass sie am
+      äußeren Rand des Rades sitzen.
+    */
+            .gondola {
+                width: 20px;
+                height: 20px;
+                background: blue; /* Farbe der Gondeln (ebenfalls Blau) */
+                border-radius: 50%;
+                transform: translateY(-120px); /* Abstand vom Zentrum */
+            }
+
+            /*
+      Keyframe-Animation für das Rad: Rotiert einmal um 360 Grad
+      in 10 Sekunden (linear) und wiederholt sich endlos.
+    */
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            /*
+      Gegenläufige Rotation für die Gondeln. Hier wird von
+      0deg auf -360deg rotiert, was den Eindruck erweckt,
+      dass die Gondeln sich nicht mitdrehen, sondern aufrecht
+      bleiben.
+    */
+            @keyframes spinOpposite {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(-360deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ferris-wheel">
+            <div class="wheel">
+                <!-- 8 "Speichen" mit jeweils einer Gondel.
+         Jede Speiche bekommt einen anderen Winkel,
+         damit die Gondeln gleichmäßig verteilt sind. -->
+                <div class="spoke" style="transform: rotate(0deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(45deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(90deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(135deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(180deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(225deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(270deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+                <div class="spoke" style="transform: rotate(315deg)">
+                    <div class="arm">
+                        <div class="gondola"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
