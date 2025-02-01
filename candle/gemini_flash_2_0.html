@@ -1,0 +1,49 @@
+<style>
+    .candle {
+        width: 50px;
+        height: 150px;
+        background-color: #f0e68c; /* Gelbliche Farbe für den Kerzenkörper */
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .flame {
+        width: 20px;
+        height: 30px;
+        background-color: #ff8c00; /* Orange für die Flamme */
+        border-radius: 50% 50% 20% 50%;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: flicker 0.8s infinite;
+        box-shadow: 0 0 10px rgba(255, 165, 0, 0.5); /* Glühen um die Flamme */
+    }
+
+    @keyframes flicker {
+        0% {
+            transform: translateX(-50%) scaleY(1);
+            opacity: 1;
+        }
+        25% {
+            transform: translateX(-52%) scaleY(1.1);
+            opacity: 0.8;
+        }
+        50% {
+            transform: translateX(-48%) scaleY(1.2);
+            opacity: 0.6;
+        }
+        75% {
+            transform: translateX(-51%) scaleY(1.1);
+            opacity: 0.9;
+        }
+        100% {
+            transform: translateX(-50%) scaleY(1);
+            opacity: 1;
+        }
+    }
+</style>
+<div class="candle">
+    <div class="flame"></div>
+</div>

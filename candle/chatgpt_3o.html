@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Kerze mit flackernder Flamme</title>
+        <style>
+            /* Grundlegendes Styling für den Hintergrund */
+            body {
+                background-color: #222;
+                margin: 0;
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Styling der Kerze */
+            .kerze {
+                position: relative;
+                width: 30px;
+                height: 120px;
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+            }
+
+            /* Styling der Flamme */
+            .flamme {
+                position: absolute;
+                bottom: 100%; /* Die Flamme erscheint oberhalb der Kerze */
+                left: 50%;
+                width: 20px;
+                height: 30px;
+                background: radial-gradient(
+                    circle,
+                    rgba(255, 200, 0, 1) 0%,
+                    rgba(255, 100, 0, 0.7) 50%,
+                    transparent 70%
+                );
+                border-radius: 50%;
+                transform: translateX(-50%);
+                filter: blur(1px);
+                animation: flacker 1s infinite alternate;
+            }
+
+            /* Keyframes für das Flackern der Flamme */
+            @keyframes flacker {
+                0% {
+                    transform: translateX(-50%) scale(1);
+                    opacity: 0.9;
+                }
+                25% {
+                    transform: translateX(-50%) scale(1.1);
+                    opacity: 1;
+                }
+                50% {
+                    transform: translateX(-50%) scale(1);
+                    opacity: 0.9;
+                }
+                75% {
+                    transform: translateX(-50%) scale(1.05);
+                    opacity: 0.95;
+                }
+                100% {
+                    transform: translateX(-50%) scale(1);
+                    opacity: 0.9;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="kerze">
+            <div class="flamme"></div>
+        </div>
+    </body>
+</html>
