@@ -1,0 +1,58 @@
+<style>
+    .kalender {
+        width: 300px;
+        border-collapse: collapse;
+    }
+
+    .kalender th,
+    .kalender td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .kalender th {
+        background-color: #f0f0f0;
+    }
+
+    .kalender .wochenende {
+        background-color: #f8f8f8;
+    }
+
+    .kalender .heute {
+        background-color: #e0f2f7;
+    }
+</style>
+<table class="kalender">
+    <thead>
+        <tr>
+            <th>Mo</th>
+            <th>Di</th>
+            <th>Mi</th>
+            <th>Do</th>
+            <th>Fr</th>
+            <th>Sa</th>
+            <th>So</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td class="wochenende">4</td>
+            <td class="wochenende">5</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td class="wochenende">11</td>
+            <td class="wochenende">12</td>
+        </tr>
+    </tbody>
+</table>

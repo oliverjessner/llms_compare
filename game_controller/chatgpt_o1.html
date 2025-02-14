@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Kalender Beispiel</title>
+        <style>
+            /* Allgemeine Reset-Einstellungen (optional) */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Container für den gesamten Kalender */
+            .calendar {
+                max-width: 400px;
+                margin: 40px auto; /* Zentriert die Kalender-Box */
+                border: 1px solid #ddd; /* Rahmen um den Kalender */
+                border-radius: 8px;
+                overflow: hidden; /* Falls Inhalt überläuft, ausblenden */
+                font-family: sans-serif;
+                background-color: #fff;
+            }
+
+            /* Kopfbereich des Kalenders */
+            .calendar-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #f4f4f4;
+                padding: 10px 15px;
+                border-bottom: 1px solid #ddd;
+            }
+
+            /* Buttons für vorherigen/nächsten Monat */
+            .calendar-header button {
+                background: none;
+                border: none;
+                font-size: 1.2rem;
+                cursor: pointer;
+                color: #333;
+                transition: color 0.2s;
+            }
+            .calendar-header button:hover {
+                color: #000;
+            }
+
+            /* Monatsüberschrift */
+            .calendar-header h2 {
+                font-size: 1.2rem;
+                font-weight: normal;
+                margin: 0;
+                text-align: center;
+            }
+
+            /* Wochentage (Mo - So) */
+            .calendar-weekdays {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                background-color: #fafafa;
+                text-align: center;
+                font-weight: bold;
+                color: #555;
+                padding: 8px 0;
+                border-bottom: 1px solid #ddd;
+            }
+            .calendar-weekdays > div {
+                /* Hier können zusätzliche Styles rein, wenn gewünscht */
+            }
+
+            /* Bereich für die Tage des Monats */
+            .calendar-days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr); /* 7 Spalten für 7 Wochentage */
+                gap: 1px; /* Spaltengröße zwischen den Tag-Elementen */
+                background-color: #ddd; /* Zeigt das Gitter an */
+            }
+
+            /* Einzelne Tag-Kacheln */
+            .calendar-days .day,
+            .calendar-days .empty {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 60px; /* Höhe der Tages-Kacheln */
+                background-color: #fff;
+                cursor: pointer;
+                position: relative;
+                transition: background-color 0.2s;
+            }
+
+            /* Hover-Effekt für Tag-Kacheln */
+            .calendar-days .day:hover {
+                background-color: #eaeaea;
+            }
+
+            /* Aktueller Tag hervorheben */
+            .calendar-days .current-day {
+                background-color: #ffefc6;
+                border: 2px solid #f5da8a;
+            }
+
+            /* Leere Felder (z.B. wenn der Monat am Mittwoch beginnt, dann sind Montag/Dienstag leer) */
+            .calendar-days .empty {
+                background-color: #f9f9f9;
+                cursor: default;
+            }
+
+            /* Optional: verschiedene Zustände oder Events */
+            .calendar-days .day.event {
+                background-color: #d0f0d0;
+                border: 2px solid #9ad09a;
+            }
+
+            /* Beispiel für responsive Schriftgrößen */
+            @media (max-width: 480px) {
+                .calendar-header h2 {
+                    font-size: 1rem;
+                }
+
+                .calendar-days .day,
+                .calendar-days .empty {
+                    min-height: 50px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calendar">
+            <!-- Monatsüberschrift -->
+            <div class="calendar-header">
+                <button class="prev-month">&laquo;</button>
+                <h2>Februar 2025</h2>
+                <button class="next-month">&raquo;</button>
+            </div>
+
+            <!-- Wochentage -->
+            <div class="calendar-weekdays">
+                <div>Mo</div>
+                <div>Di</div>
+                <div>Mi</div>
+                <div>Do</div>
+                <div>Fr</div>
+                <div>Sa</div>
+                <div>So</div>
+            </div>
+
+            <!-- Tage des Monats -->
+            <div class="calendar-days">
+                <!-- Beispielhafte Tage: Je nach Monat und Starttag kann es hier "leere" Felder für die Vortage geben -->
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day current-day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <!-- Falls der Monat mehr Tage hat, entsprechend weitere hinzufügen -->
+            </div>
+        </div>
+    </body>
+</html>

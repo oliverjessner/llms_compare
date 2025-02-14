@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nintendo Logo</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+                margin: 0;
+            }
+
+            .nintendo-logo {
+                position: relative;
+                width: 300px;
+                height: 150px;
+            }
+
+            .stripe {
+                position: absolute;
+                width: 100%;
+                height: 33.33%;
+            }
+
+            .red {
+                background-color: #e60012;
+                top: 0;
+            }
+
+            .blue {
+                background-color: #003da5;
+                top: 33.33%;
+            }
+
+            .yellow {
+                background-color: #fedd00;
+                top: 66.66%;
+            }
+
+            .letter-n {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                font-size: 120px;
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+                color: white;
+                text-align: center;
+                line-height: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="nintendo-logo">
+            <div class="stripe red"></div>
+            <div class="stripe blue"></div>
+            <div class="stripe yellow"></div>
+            <div class="letter-n">N</div>
+        </div>
+    </body>
+</html>

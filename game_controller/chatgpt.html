@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Kalender Oberfläche</title>
+        <style>
+            /* Grundlegende Kalenderoberfläche */
+            .calendar {
+                width: 100%;
+                max-width: 600px;
+                margin: 20px auto;
+                border: 1px solid #ccc;
+                font-family: Arial, sans-serif;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            }
+
+            /* Kalender-Header (Monat und Navigation) */
+            .calendar-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #3f51b5;
+                color: #fff;
+                padding: 10px;
+            }
+
+            .calendar-header h2 {
+                margin: 0;
+            }
+
+            /* Wochentagsnamen */
+            .calendar-weekdays {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                background-color: #e0e0e0;
+            }
+
+            .calendar-weekdays div {
+                padding: 10px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            /* Kalendertage */
+            .calendar-days {
+                display: grid;
+                grid-template-columns: repeat(7, 1fr);
+                gap: 1px; /* Abstand zwischen den Tagen */
+                background-color: #ccc;
+            }
+
+            .calendar-days div {
+                background-color: #fff;
+                min-height: 80px;
+                padding: 5px;
+                box-sizing: border-box;
+                position: relative;
+            }
+
+            /* Hover-Effekt für die Tage */
+            .calendar-days div:hover {
+                background-color: #f5f5f5;
+            }
+
+            /* Hervorhebung des aktuellen Tages */
+            .calendar-days .today {
+                background-color: #ffeb3b;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calendar">
+            <!-- Header mit Monatsanzeige und Navigationsbuttons -->
+            <div class="calendar-header">
+                <button>&laquo;</button>
+                <h2>April 2025</h2>
+                <button>&raquo;</button>
+            </div>
+
+            <!-- Wochentage -->
+            <div class="calendar-weekdays">
+                <div>Mo</div>
+                <div>Di</div>
+                <div>Mi</div>
+                <div>Do</div>
+                <div>Fr</div>
+                <div>Sa</div>
+                <div>So</div>
+            </div>
+
+            <!-- Kalendertage -->
+            <div class="calendar-days">
+                <!-- Leere Felder für Tage des Vormonats (optional) -->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+
+                <!-- Tage des aktuellen Monats -->
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+                <div>7</div>
+                <div>8</div>
+                <div>9</div>
+                <div>10</div>
+                <div>11</div>
+                <div>12</div>
+                <div class="today">13</div>
+                <!-- aktueller Tag -->
+                <div>14</div>
+                <div>15</div>
+                <div>16</div>
+                <div>17</div>
+                <div>18</div>
+                <div>19</div>
+                <div>20</div>
+                <div>21</div>
+                <div>22</div>
+                <div>23</div>
+                <div>24</div>
+                <div>25</div>
+                <div>26</div>
+                <div>27</div>
+                <div>28</div>
+                <div>29</div>
+                <div>30</div>
+                <div>31</div>
+            </div>
+        </div>
+    </body>
+</html>
